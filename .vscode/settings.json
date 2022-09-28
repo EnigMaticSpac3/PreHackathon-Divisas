@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/47a2a48e-e9d0-4a21-9d86-5abcbe82d7df/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/divisas-project",
+    "appService.deploySubpath": "."
+}

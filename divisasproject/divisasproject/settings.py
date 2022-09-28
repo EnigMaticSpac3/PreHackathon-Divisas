@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-%ugqthdcjv=b0vh$n@np3(yeg@=$%m^6h((0e*$34#+=8=6zk9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["172.29.36.0", '127.0.0.1']
+ALLOWED_HOSTS = [
+    "divisas-project.azurewebsites.net",
+    '172.29.36.7',
+    ]
 
 
 # Application definition
@@ -38,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webapp'
+    'webapp.apps.WebappConfig'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleWare',
 ]
 
 ROOT_URLCONF = 'divisasproject.urls'
@@ -120,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATICFILE_STORAGE = 'whitenoise.storage.CompressManifestStaticFileStorage'
+STATIC_ROOT = BASE_DIR / '/divisasproject/webapp/static'
 STATICFILES_DIR = [
     BASE_DIR / '/divisasproject/webapp/static',
 ]
